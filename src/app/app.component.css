@@ -1,0 +1,34 @@
+.header{
+    
+    height: 40px;
+    padding: 20px;
+    background-color: #3F51B5 ;
+    
+}
+
+.subHeader{
+    background-color: #E7E7E7;
+    height: 60px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3,2fr);
+    align-content: center;
+    text-align: center;
+    
+    
+ 
+}
+
+.enum{
+    background-color:#949494;
+    margin-bottom: 0px;
+    
+    
+}
+
+
+
+
+
+
+
