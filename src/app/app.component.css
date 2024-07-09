@@ -1,9 +1,25 @@
+textarea{
+    border: none;
+    resize: none;
+    width: 800px;
+    height: 650px;
+    background-color: #C7C7C7;
+    margin: 0;
+}
+
+button{
+    margin-right: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
 .header{
     
     height: 40px;
     padding: 20px;
     background-color: #3F51B5 ;
-    
+   
 }
 
 .subHeader{
@@ -14,15 +30,30 @@
     grid-template-columns: repeat(3,2fr);
     align-content: center;
     text-align: center;
-    
-    
- 
+    color: #7D7D7D;
+
 }
 
 .enum{
+    margin-left: 8px;
     background-color:#949494;
     margin-bottom: 0px;
+    margin-right: 10px;
+}
+
+.validacao{
+    margin-left: 20px;
+    width: 803px;
+    height: 750px;
+    padding: 10px;
     
+}
+
+.buttons{
+    
+    
+    display: flex;
+    margin-bottom: 6px;
     
 }
 
