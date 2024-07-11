@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
+
 textarea{
     border: none;
     resize: none;
@@ -16,10 +18,20 @@ button{
 
 .header{
     
-    height: 40px;
-    padding: 20px;
-    background-color: #3F51B5 ;
-   
+    height: 30px;
+    padding: 5px;
+    background-color: #5F5F5F;
+    color: #E7E7E7;
+    margin-bottom:10px;
+    text-align: center;  
+
+}
+
+.header, h2{
+    font-family: "Jost", sans-serif; 
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
 }
 
 .subHeader{
@@ -31,7 +43,6 @@ button{
     align-content: center;
     text-align: center;
     color: #7D7D7D;
-
 }
 
 .enum{
@@ -45,13 +56,10 @@ button{
     margin-left: 20px;
     width: 803px;
     height: 750px;
-    padding: 10px;
-    
+    padding: 10px; 
 }
 
 .buttons{
-    
-    
     display: flex;
     margin-bottom: 6px;
     
