@@ -3,44 +3,56 @@
     <h2>Validador NFe  </h2>
   </div>
 
+<section class="instrucao">
   <div class="subHeader"> 
-  
-    <div class="submenu">
+    
+    <div class="submenu1">
       <h3 class="enum">1º</h3>
-      <br/>
       <p>Cole o conteúdo do XML no local indicado.</p>
-  
     </div>  
     
-  <div class="submenu">
+    <div class="submenu1">
       <h3 class="enum">2º</h3>
-      <br/>
-      <p>Aperte "Validar" para iniciar o trabalho de verificação do XML ou "Apagar" para apagar o conteúdo.</p>
-  </div>  
+      <p id="text">Aperte "Validar" para iniciar o trabalho de verificação do XML ou "Apagar" para apagar o conteúdo.</p>
+    </div>  
     
-  <div class="submenu">
+    <div class="submenu1">
       <h3 class="enum">3º</h3>
-      <br/>
-      Confira a resposta no card inferior direito 
-  </div>  
+      <p>Confira a resposta no card inferior direito</p>
+    </div>  
     
   </div>
+</section>
 
-  <div class="validacao">
+<div class="validacao">
+ 
+  
+  <div class="textnfe">
+      
+    <textarea matInput  [(ngModel)]="xml" id="nfeXml"></textarea>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Textarea</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field>
-
-  <div class="buttons">
-    <button mat-flat-button color="primary">Validar</button>
-    <button mat-flat-button color="warn">Apagar</button>
+    <div class="buttons">
+      <button (click)= "validarXml()" mat-flat-button color="primary">Validar</button>
+      <button (click)="apagar()" mat-flat-button color="warn">Apagar</button>
+    </div>
+  
   </div>
 
-  <div>
-    <p>resposta: </p>
+  <div class="response">
+    <p>{{nfeResponse.titResult}}</p>
+      <p>{{nfeResponse.respParserXml}}</p>
+        <p>{{this.nfeResponse.tipMsmString}}</p>
+          <p>{{this.nfeResponse.schValid}}</p>        
+            <p>{{this.nfeResponse.titValidNfe}}</p>
+              <p>{{this.nfeResponse.certUser}}</p>
+                <p>{{this.nfeResponse.validCert}}</p>
+                  <p>{{this.nfeResponse.regNegProd}}</p>
+                    <p>{{this.nfeResponse.probValida}}</p>
+                      <p>{{this.nfeResponse.listErrs}}</p>
   </div>
-  </div>  
+
+</div> 
+  
+  
   
 
