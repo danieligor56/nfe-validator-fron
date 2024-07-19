@@ -81,10 +81,12 @@ button{
 
 .response{
     float: right;
-    width: 700px;
+    width: 90%;
     background-color:#C7C7C7;
     height: 300;
-    grid-column: 2
+    grid-column: 2;
+    padding: 5px;
+    overflow: scroll;
     
 }
 

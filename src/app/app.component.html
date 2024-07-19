@@ -39,16 +39,25 @@
   </div>
 
   <div class="response">
-    <p>{{nfeResponse.titResult}}</p>
-      <p>{{nfeResponse.respParserXml}}</p>
-        <p>{{this.nfeResponse.tipMsmString}}</p>
-          <p>{{this.nfeResponse.schValid}}</p>        
-            <p>{{this.nfeResponse.titValidNfe}}</p>
-              <p>{{this.nfeResponse.certUser}}</p>
-                <p>{{this.nfeResponse.validCert}}</p>
-                  <p>{{this.nfeResponse.regNegProd}}</p>
-                    <p>{{this.nfeResponse.probValida}}</p>
-                      <p>{{this.nfeResponse.listErrs}}</p>
+    <h1><b>Resultado da Validação do Schema e de Regras de Negócio: </b></h1>
+      <p><b>Parse XML: </b>{{nfeResponse.respParserXml}}.</p>
+        <p><b>Tipo de mensagem: </b>{{this.nfeResponse.tipMsmString}}.</p>
+          <p><b>Schema XML: </b>{{this.nfeResponse.schValid}}.</p>        
+            <p><b>Chave de acesso nota: </b>{{this.nfeResponse.titValidNfe}}.</p>
+              <!-- <p>{{this.nfeResponse.certUser}}</p> -->
+                <p><b>Assinatura digital: </b>{{this.nfeResponse.validCert}}.</p>
+                  <p><b>Regras de Negócio: </b>{{this.nfeResponse.regNegProd}}.</p>
+                    <!-- <p>{{this.nfeResponse.probValida}}</p> -->
+                      <!-- <p>{{this.nfeResponse.listErrs}}</p> -->
+                      <ul>
+                        <li *ngFor="let err of nfeResponse.listErrs">
+                          <p>{{ err }}</p>
+                        </li>
+                      </ul>
+
+                      <div *ngIf="isLoading">
+                        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                      </div>
   </div>
 
 </div> 

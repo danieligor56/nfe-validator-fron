@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   response:string = '';
   xml:string = '';
   nfeResponse:Nfe;
+  isLoading = false;
 
   constructor(
     private service:ServicesService,
@@ -59,7 +60,7 @@ export class AppComponent implements OnInit {
   }
 
   validarXml(){
-    
+    this.isLoading = true;
     this.service.valida(this.xml).subscribe(
       (resposta) => {
         this.response = resposta;
@@ -73,6 +74,7 @@ export class AppComponent implements OnInit {
         this.nfeResponse.regNegProd = resposta.regNegProd;
         this.nfeResponse.probValida = resposta.probValida;
         this.nfeResponse.listErrs = resposta.listErrs;
+        this.isLoading = false;
       
       }
     )
