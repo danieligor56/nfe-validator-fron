@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ServicesService {
 
-  
+  urlApi:string = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyBFruCwPWbRmau-HNr3ZGp8cYKtl0AxWKE";  
 
   constructor(private http:HttpClient) { }
 
@@ -18,4 +18,9 @@ export class ServicesService {
    return this.http.post('http://localhost:8080/api/xmlnfe=/', xml);
   }
 
+  sendData(rejeicao:string): Observable<any> {
+
+    return this.http.post<any>(this.urlApi, rejeicao);
+
+}
 }

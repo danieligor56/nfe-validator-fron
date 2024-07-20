@@ -1,7 +1,5 @@
 
-  <div class="header">
-    <h2>Validador NFe  </h2>
-  </div>
+  <div class="header"><h2>Validador NFe</h2></div>
 
 <section class="instrucao">
   <div class="subHeader"> 
@@ -25,7 +23,6 @@
 </section>
 
 <div class="validacao">
- 
   
   <div class="textnfe">
       
@@ -46,21 +43,33 @@
             <p><b>Chave de acesso nota: </b>{{this.nfeResponse.titValidNfe}}.</p>
               <!-- <p>{{this.nfeResponse.certUser}}</p> -->
                 <p><b>Assinatura digital: </b>{{this.nfeResponse.validCert}}.</p>
-                  <p><b>Regras de Negócio: </b>{{this.nfeResponse.regNegProd}}.</p>
+                  <p><b>Regras de Negócio: </b>{{this.nfeResponse.regNegProd}}:</p>
                     <!-- <p>{{this.nfeResponse.probValida}}</p> -->
                       <!-- <p>{{this.nfeResponse.listErrs}}</p> -->
                       <ul>
                         <li *ngFor="let err of nfeResponse.listErrs">
-                          <p>{{ err }}</p>
+                          <p>{{ err }}.</p>
                         </li>
                       </ul>
 
-                      <div *ngIf="isLoading">
+                      <!-- <div *ngIf="isLoading">
                         <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-                      </div>
+                      </div> -->
+  </div>
+
+  <div class="respostaIa">
+    {{responseApi}}
   </div>
 
 </div> 
+
+<footer>
+  <div *ngIf="isLoading">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+</footer>
+
+
   
   
   

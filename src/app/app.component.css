@@ -91,6 +91,7 @@ button{
 }
 
 .textnfe{
+    
     margin-top: 0px;
     margin-left: 20px;
     grid-row: 1 / span 2;
@@ -103,6 +104,19 @@ button{
     display: flex;
     margin-bottom: 6px;
     margin-top: 10px;    
+}
+
+.respostaIa{
+
+    margin-top: 0px;
+    float: right;
+    width: 90%;
+    background-color:#C7C7C7;
+    height: 342px;
+    grid-column: 2;
+    padding: 5px;
+    overflow: scroll;
+
 }
 
 
