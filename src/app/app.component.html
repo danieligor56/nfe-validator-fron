@@ -29,7 +29,7 @@
     <textarea matInput  [(ngModel)]="xml" id="nfeXml"></textarea>
 
     <div class="buttons">
-      <button (click)= "validarXml()" mat-flat-button color="primary">Validar</button>
+      <button (disable)="enButton" (click)="validarXml()" mat-flat-button color="primary">Validar</button>
       <button (click)="apagar()" mat-flat-button color="warn">Apagar</button>
     </div>
   
@@ -58,7 +58,7 @@
   </div>
 
   <div class="respostaIa">
-    {{responseApi}}
+    {{this.nfeResponse.documentationResponse}}
   </div>
 
 </div> 

@@ -9,4 +9,5 @@ export interface Nfe{
     regNegProd: string;
     probValida: string;
     listErrs: string[];
+    documentationResponse: string;
 }

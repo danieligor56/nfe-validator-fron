@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   nfeResponse:Nfe;
   isLoading = false;
   responseApi:string = '';
+  enButton:boolean = true;
 
   constructor(
     private service:ServicesService,
@@ -32,7 +33,9 @@ export class AppComponent implements OnInit {
       validCert: '',
       regNegProd: '',
       probValida: '',
-      listErrs: []
+      documentationResponse: '',
+      listErrs: [],
+      
     };
 
     
@@ -57,12 +60,14 @@ export class AppComponent implements OnInit {
       validCert: '',
       regNegProd: '',
       probValida: '',
-      listErrs: []
+      listErrs: [],
+      documentationResponse: ''
     };
   }
   
   validarXml(){
     debugger;
+    this.enButton=false;
     this.isLoading = true;
     this.service.valida(this.xml).subscribe(
       (resposta) => {
@@ -78,11 +83,23 @@ export class AppComponent implements OnInit {
         this.nfeResponse.probValida = resposta.probValida;
         this.nfeResponse.listErrs = resposta.listErrs;
        
-        this.service.sendData(this.nfeResponse.probValida).subscribe(
-          (respostaApi) => {
-            this.responseApi = respostaApi.text;
+        if (resposta.documentationResponse) {
+          try {
+            const documentationResponse = JSON.parse(resposta.documentationResponse);
+            if (documentationResponse.candidates && documentationResponse.candidates[0].content.parts[0].text) {
+              this.nfeResponse.documentationResponse = documentationResponse.candidates[0].content.parts[0].text;
+            } else {
+              this.nfeResponse.documentationResponse = '';
+            }
+          } catch (e) {
+            console.error('Failed to parse documentationResponse JSON:', e);
+            this.nfeResponse.documentationResponse = '';
           }
-        )
+        } else {
+          this.nfeResponse.documentationResponse = '';
+        }
+       
+       
         this.isLoading = false;
       
       }
